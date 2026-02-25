@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Registration Form</title>
+    <style>
+        :root {
+            --primary-color: #28a745;
+            --bg-color: #f4f7f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin: auto;
+        }
+        h1, h3 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Important for grid layout */
+        }
+        .radio-check-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 5px 0;
+        }
+        .radio-check-group input {
+            width: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .form-group-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form name="registration" method="POST" data-netlify="true">
+            
+            <div class="form-group-grid">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" name="first_name" placeholder="John" required>
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="last_name" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="form-group-grid">
+                <div>
+                    <label>Father's Name</label>
+                    <input type="text" name="father_name">
+                </div>
+                <div>
+                    <label>Date Of Birth</label>
+                    <input type="date" name="dob">
+                </div>
+            </div>
+
+            <div class="form-group-grid">
+                <div>
+                    <label>CNIC</label>
+                    <input type="text" name="cnic" placeholder="00000-0000000-0">
+                </div>
+                <div>
+                    <label>Phone ☎️</label>
+                    <input type="tel" name="phone" placeholder="+92...">
+                </div>
+            </div>
+
+            <div class="form-group-grid">
+                <div>
+                    <label>Email ✉️</label>
+                    <input type="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <div class="radio-check-group">
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group-grid">
+                <div>
+                    <label>Course</label>
+                    <select name="course">
+                        <option value="">---Select---</option>
+                        <option value="html">HTML</option>
+                        <option value="php">PHP</option>
+                        <option value="java">JAVA</option>
+                        <option value="python">PYTHON</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nationality</label>
+                    <input type="text" name="nationality">
+                </div>
+            </div>
+
+            <label>Hobbies</label>
+            <div class="radio-check-group">
+                <label><input type="checkbox" name="hobby" value="cricket"> Cricket</label>
+                <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+                <label><input type="checkbox" name="hobby" value="singing"> Singing</label>
+                <label><input type="checkbox" name="hobby" value="dancing"> Dancing</label>
+            </div>
+
+            <label>Address</label>
+            <textarea name="address" rows="3" placeholder="Current residential address"></textarea>
+
+            <label>Upload Photo</label>
+            <input type="file" name="photo">
+
+            <h3>Qualification</h3>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Exam</th>
+                            <th>Board/University</th>
+                            <th>% Percentage</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X (Metric)</td>
+                            <td><input type="text" name="x_board"></td>
+                            <td><input type="text" name="x_marks"></td>
+                            <td><input type="text" name="x_year"></td>
+                        </tr>
+                        <tr>
+                            <td>XII (Inter)</td>
+                            <td><input type="text" name="xii_board"></td>
+                            <td><input type="text" name="xii_marks"></td>
+                            <td><input type="text" name="xii_year"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="submit" class="submit-btn">Register Now</button>
+        </form>
+    </div>
+
+</body>
+</html>
